@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/allRecipes"
+        android:id="@+id/allRecipes"
+        android:icon="@drawable/ic_baseline_density_small_24"
+        android:enabled="true"
+
+    />
+    <item android:title="@string/favorites"
+        android:id="@+id/favorites"
+        android:icon="@drawable/ic_baseline_star_24"
+        android:enabled="true"
+        />
+    <item android:title="@string/contest"
+        android:id="@+id/contest"
+        android:icon="@drawable/contest"
+        android:enabled="true"
+        />
+
+</menu>

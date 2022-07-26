@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Recipes</string>
+    <string name="allRecipes">Все рецепты</string>
+    <string name="favorites">Избранное</string>
+    <string name="contest">Конкурс</string>
+    <string name="marks">Обозначения</string>
+    <string name="cooking">a man cooking somwthing</string>
+    <string name="content_description_media">pea soup</string>
+    <string name="title">Pea soup</string>
+    <string name="secondary_text">Peas and othervegetables, meat</string>
+    <string name="action_1">Learn more</string>
+    <string name="action_2">Outlets</string>
+    <string name="action_3">Buy</string>
+
+</resources>
