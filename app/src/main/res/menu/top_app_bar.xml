@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.AppActivity">
+    <item
+        android:id="@+id/searchFragment"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="@string/search"
+        android:tint="?attr/colorPrimary"
+        android:contentDescription="@string/content_description_search"
+        app:showAsAction="ifRoom"
+ />
+    <item
+        android:id="@+id/filterFragment"
+        android:icon="@drawable/ic_baseline_filter_alt_24"
+        android:title="@string/filter"
+        android:tint="?attr/colorPrimary"
+        android:contentDescription="@string/content_description_filter"
+        app:showAsAction="ifRoom"
+        />
+</menu>

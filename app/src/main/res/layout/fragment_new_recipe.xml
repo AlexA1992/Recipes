@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/commonTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/creating_a_recipe" />
+
+        <!--        Recipe Title-->
+        <TextView
+            android:id="@+id/giveTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/recipe_title" />
+
+        <EditText
+            android:id="@+id/givenTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:autofillHints="@string/give_a_title_to_the_recipe"
+            android:hint="@string/give_a_title_to_the_recipe"
+            android:inputType="text" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" />
+
+        <!--        Recipe Category-->
+        <TextView
+            android:id="@+id/giveCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/recipeCategory" />
+
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:checkedButton="@+id/radio_button_1">
+
+            <RadioButton
+                android:id="@+id/radioEUROPEAN"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/label_1" />
+
+            <RadioButton
+                android:id="@+id/radioASIAN"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/asian" />
+
+            <RadioButton
+                android:id="@+id/radioPANASIAN"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/panasian" />
+
+            <RadioButton
+                android:id="@+id/radioEASTERN"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/eastern" />
+
+            <RadioButton
+                android:id="@+id/radioAMERICAN"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/american" />
+
+            <RadioButton
+                android:id="@+id/radioRUSSIAN"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/russian" />
+
+            <RadioButton
+                android:id="@+id/radioMEDITERRANEAN"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/mediterranean" />
+        </RadioGroup>
+
+        <!--        Recipe Reference-->
+        <TextView
+            android:id="@+id/giveReference"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/giveReference" />
+
+        <EditText
+            android:id="@+id/givenReference"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:autofillHints="@string/givenReference"
+            android:hint="@string/givenReference"
+            android:inputType="text" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" />
+
+        <!--        Recipe Content-->
+        <TextView
+            android:id="@+id/giveContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/giveContent" />
+
+        <EditText
+            android:id="@+id/givenContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:autofillHints="@string/givenContent"
+            android:gravity="top|start"
+            android:hint="@string/givenContent"
+            android:inputType="textMultiLine"
+            android:lines="8"
+            android:maxLines="10"
+            android:minLines="6"
+            android:scrollbars="vertical"/>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" />
+
+        <!--        Recipe Steps-->
+        <TextView
+            android:id="@+id/giveSteps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/giveSteps" />
+
+        <!--        Step 1-->
+
+        <TextView
+            android:id="@+id/step1Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/step1" />
+
+        <EditText
+            android:id="@+id/step1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:autofillHints="Type step 1 here"
+            android:hint="@string/step1hint"
+            android:inputType="text" />
+
+        <!--        Step 2-->
+        <TextView
+            android:id="@+id/step2Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/step2" />
+
+        <EditText
+            android:id="@+id/step2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:autofillHints="Type step 2 here"
+            android:hint="@string/step2hint"
+            android:inputType="text" />
+
+        <!--        Step 3-->
+        <TextView
+            android:id="@+id/step3Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/step3" />
+
+        <EditText
+            android:id="@+id/step3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:autofillHints="Type step 3 here"
+            android:hint="@string/step3hint"
+            android:inputType="text" />
+
+        <!--        Step 4-->
+        <TextView
+            android:id="@+id/step4Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/step4" />
+
+        <EditText
+            android:id="@+id/step4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:autofillHints="Type step 4 here"
+            android:hint="@string/step4hint"
+            android:inputType="text" />
+
+        <!--        Step 5-->
+        <TextView
+            android:id="@+id/step5Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/step5" />
+
+        <EditText
+            android:id="@+id/step5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:autofillHints="Type step 5 here"
+            android:hint="@string/step5hint"
+            android:inputType="text" />
+
+        <!--        Step 6-->
+        <TextView
+            android:id="@+id/step6Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/step6" />
+
+        <EditText
+            android:id="@+id/step6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:autofillHints="Type step 6 here"
+            android:hint="@string/step6hint"
+            android:inputType="text" />
+
+        <!--        Step 7-->
+        <TextView
+            android:id="@+id/step7Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/step7" />
+
+        <EditText
+            android:id="@+id/step7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:autofillHints="Type step 7 here"
+            android:hint="@string/step7hint"
+            android:inputType="text" />
+
+        <!--        Step 8-->
+        <TextView
+            android:id="@+id/step8Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/step8" />
+
+        <EditText
+            android:id="@+id/step8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:autofillHints="Type step 8 here"
+            android:hint="@string/step8hint"
+            android:inputType="text" />
+
+        <!--        Step 9-->
+        <TextView
+            android:id="@+id/step9Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/step9" />
+
+        <EditText
+            android:id="@+id/step9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:autofillHints="Type step 9 here"
+            android:hint="@string/step9hint"
+            android:inputType="text" />
+
+        <!--        Step 10-->
+        <TextView
+            android:id="@+id/step10Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/step10" />
+
+        <EditText
+            android:id="@+id/step10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:autofillHints="Type step 10 here"
+            android:hint="@string/step10hint"
+            android:inputType="text" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/recipeCreateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:background="@color/lightgrey"
+            android:text="@string/save"
+            android:textColor="@color/bottommenubar" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</ScrollView>

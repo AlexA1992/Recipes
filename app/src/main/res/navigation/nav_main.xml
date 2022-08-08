@@ -6,6 +6,42 @@
     app:startDestination="@id/startFragment">
     <fragment
         android:id="@+id/startFragment"
-        android:name="ru.book.recipes.fragment.StartFragment"
-        android:label="StartFragment" />
+        android:name="ru.book.recipes.fragment.startFragment"
+        tools:layout="@layout/fragment_start"
+        android:label="Главная">
+        <action
+            android:id="@+id/action_startFragment_to_newRecipeFragment"
+            app:destination="@id/newRecipeFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_singleRecipeFragment"
+            app:destination="@id/singleRecipeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newRecipeFragment"
+        android:name="ru.book.recipes.fragment.newRecipeFragment"
+        android:label="newRecipeFragment" />
+    <fragment
+        android:id="@+id/singleRecipeFragment"
+        android:name="ru.book.recipes.fragment.singleRecipeFragment"
+        android:label="singleRecipeFragment" >
+        <action
+            android:id="@+id/action_singleRecipeFragment_to_newRecipeFragment"
+            app:destination="@id/newRecipeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="ru.book.recipes.fragment.authFragment"
+        android:label="authFragment" />
+    <fragment
+        android:id="@+id/contestFragment"
+        android:name="ru.book.recipes.fragment.contestFragment"
+        android:label="contestFragment" />
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="ru.book.recipes.fragment.favoritesFragment"
+        android:label="favoritesFragment" />
+    <fragment
+        android:id="@+id/signinFragment"
+        android:name="ru.book.recipes.fragment.signInFragment"
+        android:label="signInFragment" />
 </navigation>
