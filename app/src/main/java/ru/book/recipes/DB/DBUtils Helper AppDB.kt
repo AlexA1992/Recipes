@@ -8,12 +8,13 @@ import androidx.room.RoomDatabase
 @Database(
     entities = [RecipeEntity::class,
         UserEntity::class,
-        StepEntity::class,
+//        StepEntity::class,
         FavoriteEntity::class,
         LikeEntity::class,
         DislikeEntity::class,
+        ShareEntity::class,
                ],
-    version = 2
+    version = 7
 )
 
 abstract class AppDb : RoomDatabase() {

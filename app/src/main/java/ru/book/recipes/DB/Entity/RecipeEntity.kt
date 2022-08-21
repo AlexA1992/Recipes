@@ -40,8 +40,8 @@ data class RecipeEntity(
 //    val isLikedByMe: Boolean = false,
 //    @ColumnInfo(name = "isDislikedByMe")
 //    val isDislikedByMe: Boolean = false,
-    @ColumnInfo(name = "isMine")
-    val isMine: Boolean = false,
+//    @ColumnInfo(name = "isMine")
+//    val isMine: Boolean = false,
     @ColumnInfo(name = "countFavorites")
     val countFavorites: Long = 0,
     @ColumnInfo(name = "countLikes")

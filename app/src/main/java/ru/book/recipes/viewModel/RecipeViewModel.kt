@@ -6,8 +6,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import ru.book.recipes.DB.AppDb
 import ru.book.recipes.Repository.ROOMImpl
-import ru.book.recipes.data.Recipe
-import ru.book.recipes.data.User
+import ru.book.recipes.activity.AppActivity
+import ru.book.recipes.data.*
 import ru.book.recipes.utils.SingleLiveEvent
 
 class RecipeViewModel(application: Application) : AndroidViewModel(application) {
@@ -17,25 +17,72 @@ class RecipeViewModel(application: Application) : AndroidViewModel(application) 
                 context = application
             ).recipeDao
         )
-    val dataRecipes = repository.recipes
+
+    val dataRecipes = repository.dataRecipes
 
     val dataUsers = repository.users
 
     val recipeToTransfer = SingleLiveEvent<Recipe>()
     fun onRecipeClicked(recipe: Recipe) {
-        println("in postClicked")
+        println("in recipeClicked")
         recipeToTransfer.value = recipe
     }
 
-    fun toFavorites(recipe: Recipe) = repository.toFavoritesRecipe(recipe)
-    fun like(recipe: Recipe) = repository.likeRecipe(recipe)
-    fun dislike(recipe: Recipe) = repository.dislikeRecipe(recipe)
-    fun share(recipe: Recipe) = repository.shareRecipe(recipe)
+    //все Избранное конкретнонго юзера
+    val recipesInFavor = MutableLiveData<List<Favorite>>()
+    fun findFavorites(userId: Long) {
+        recipesInFavor.value = repository.findFavorites(userId)
+    }
+    //добавить рецепт в Избранное
+    fun toFavorites(favorite: Favorite, recipeId: Long) =
+        repository.toFavoritesRecipe(favorite, recipeId)
+    //убрать рецепт из Избранного
+    fun fromFavorites(userId: Long, recipeId: Long) =
+        repository.fromFavoritesRecipe(userId, recipeId)
+
+
+    //все Лайки конкретнонго юзера
+    val recipesInLike = MutableLiveData<List<Like>>()
+    fun findLikes(userId: Long) {
+        recipesInLike.value = repository.findLikes(userId)
+    }
+    //добавить рецепт в Лайки
+    fun toLikes(like: Like, recipeId: Long) =
+        repository.toLikesRecipe(like, recipeId)
+    //убрать рецепт из Лайков
+    fun fromLikes(userId: Long, recipeId: Long) =
+        repository.fromLikesRecipe(userId, recipeId)
+
+
+    //все Дизлайки конкретнонго юзера
+    val recipesInDislike = MutableLiveData<List<Dislike>>()
+    fun findDislikes(userId: Long) {
+        recipesInDislike.value = repository.findDislikes(userId)
+    }
+    //добавить рецепт в Дизлайки
+    fun toDislikes(dislike: Dislike, recipeId: Long) =
+        repository.toDislikesRecipe(dislike, recipeId)
+    //убрать рецепт из Дизлайков
+    fun fromDislikes(userId: Long, recipeId: Long) =
+        repository.fromDislikesRecipe(userId, recipeId)
+
+    //Sharing
+    //все Shares конкретнонго юзера
+    val recipesInShare = MutableLiveData<List<Share>>()
+    fun findShares(userId: Long) {
+        recipesInShare.value = repository.findShares(userId)
+    }
+    val shareActionNeeded = SingleLiveEvent<StringBuilder>()
+    fun shareClicked(recipeToString: StringBuilder, recipeId: Long, share: Share) {
+        repository.sharePlus(share, recipeId)
+        shareActionNeeded.value = recipeToString
+    }
+
     fun delete(recipe: Recipe) = repository.deleteRecipe(recipe)
 
     fun addUser(user: User) = repository.addUser(user)
 
-    val foundedUser = MutableLiveData<User?>()
+    val foundedUser = MutableLiveData<User>()
     fun findUser(user: User) {
         foundedUser.value = repository.findUser(user)
     }
@@ -44,14 +91,15 @@ class RecipeViewModel(application: Application) : AndroidViewModel(application) 
     fun edit(recipe: Recipe) {
         println("in OnEditClicked")
         currentRecipe.value = recipe
+        currentRecipe.value = null
     }
 
     fun createRecipe(newRecipe: Recipe) = repository.createRecipe(newRecipe)
+    fun updateRecipe(oldRecipe: Recipe) = repository.updateRecipe(oldRecipe)
 
-//    val registeredUser = repository.registeredUser
-//    fun registerUser(user: User){
-//        repository.registeredUser.value = user
-//        println(repository.registeredUser.value)
+//    val userFavoriteRe = MutableLiveData<User>()
+//    fun findUser(user: User) {
+//        foundedUser.value = repository.findUser(user)
 //    }
 
 }

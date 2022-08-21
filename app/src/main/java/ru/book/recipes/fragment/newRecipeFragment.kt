@@ -9,6 +9,7 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import ru.book.recipes.R
@@ -19,10 +20,10 @@ import ru.book.recipes.databinding.FragmentNewRecipeBinding
 import ru.book.recipes.utils.StringArg
 import ru.book.recipes.utils.checkRecipeFields
 import ru.book.recipes.viewModel.RecipeViewModel
+import ru.book.recipes.utils.hideKeyboard
 
 class newRecipeFragment : Fragment() {
     private lateinit var recipeTitle: EditText
-    private lateinit var category: RadioButton
     private lateinit var imageReference: EditText
     private lateinit var recipeContent: EditText
     private lateinit var step1: EditText
@@ -44,6 +45,7 @@ class newRecipeFragment : Fragment() {
     private lateinit var radio5: RadioButton
     private lateinit var radio6: RadioButton
     private lateinit var radio7: RadioButton
+    private lateinit var theRecipe: Recipe
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -57,13 +59,6 @@ class newRecipeFragment : Fragment() {
             ownerProducer =
             ::requireParentFragment
         )
-
-//        val recipeToShow = arguments?.recipeId
-
-//        viewModel.dataRecipes.observe(viewLifecycleOwner) { recipes ->
-//            val theRecipe = recipes.find {
-//                recipeToShow?.toLong() == it.id
-//            }
 
         //инициализируем всё
         recipeTitle = binding.givenTitle
@@ -79,6 +74,9 @@ class newRecipeFragment : Fragment() {
         step8 = binding.step8
         step9 = binding.step9
         step10 = binding.step10
+        val stepFieldList = listOf<EditText>(
+            step1, step2, step3, step4, step5, step6, step7, step8, step9, step10
+        )
         radioGroup = binding.radioGroup
         radio1 = binding.radioAMERICAN
         radio2 = binding.radioASIAN
@@ -90,15 +88,48 @@ class newRecipeFragment : Fragment() {
         val radioList = listOf<RadioButton>(
             radio1, radio2, radio3, radio4, radio5, radio6, radio7
         )
-//        val categoryButtonId: Int = radioGroup.checkedRadioButtonId
-//        val categoryButtonText: String = checkedRadioButtonId.
-//
 
+        //проверяем передан ли Рецепт для редактирования
+        val recipeToShow = arguments?.recipeId1
+
+        if (recipeToShow != null) {
+            viewModel.dataRecipes.observe(viewLifecycleOwner) { recipes ->
+                theRecipe = recipes.find {
+                    recipeToShow.toLong() == it.id
+                }!!
+
+                //запихиваем
+                recipeTitle.setText(theRecipe.title)
+                imageReference.setText(theRecipe.image)
+                recipeContent.setText(theRecipe.content)
+
+                for (button in radioList) {
+                    if (button.text.toString() == theRecipe.category.name) {
+                        button.isChecked = true
+                        break
+                    }
+                }
+                val stepString = theRecipe.steps
+                val stepList: MutableList<String> = stepString.split(";") as MutableList<String>
+
+                for (stepField in stepFieldList) {
+                    //println(stepList)
+                    if (stepList.isNotEmpty()) {
+                        println("stepList $stepList")
+                        stepField.setText(stepList.get(0))
+                        stepList.removeAt(0)
+                        println("stepList $stepList")
+                    } else {
+                        break
+                    }
+                }
+            }
+        }
 
         var categoryString: String = ""
         var category: Category? = null
-        saveRecipeButton.setOnClickListener {
 
+        saveRecipeButton.setOnClickListener {
             val title = recipeTitle.text.toString()
             val content = recipeContent.text.toString()
             val reference = imageReference.text.toString()
@@ -106,11 +137,10 @@ class newRecipeFragment : Fragment() {
                 if (radio.isChecked) {
                     category = Category.valueOf(radio.text.toString())
                     categoryString = category.toString()
-                    println(radio.text)
-                    println(category.toString())
                     break
                 }
             }
+
             //делаем строку из шагов
             val step1Text = step1.text
             val step2Text = step2.text
@@ -135,12 +165,10 @@ class newRecipeFragment : Fragment() {
                 step9Text.toString(),
                 step10Text.toString(),
             )
-
             var allSteps: String = ""
 
             for (stepString in steps) {
                 if (stepString != "") {
-                    println(stepString)
                     allSteps = allSteps + stepString + ";"
                 }
             }
@@ -150,7 +178,7 @@ class newRecipeFragment : Fragment() {
             if (recipeCheck != "") {
                 context?.let { it1 ->
                     MaterialAlertDialogBuilder(it1)
-                        .setTitle(resources.getString(R.string.createReciprDialog))
+                        .setTitle(resources.getString(R.string.createReciprDialogError))
                         .setMessage(recipeCheck)
                         .setPositiveButton(resources.getString(R.string.undestood)) { dialog, which ->
                             // Respond to positive button press
@@ -158,52 +186,66 @@ class newRecipeFragment : Fragment() {
                         .show()
                 }
             } else {
-                val newRecipe = category?.let { it1 ->
-                    Recipe(
-                        title = title,
-                        authorId = AppActivity.userId.toLong(),
-                        author = AppActivity.userName,
-//                        image = reference,
-                        category = it1,
-                        isMine = true,
-                        content = content,
-                        steps = allSteps,
-                    )
-                }
-                if (newRecipe != null) {
-                    viewModel.createRecipe(newRecipe)
+                if (recipeToShow != null) {
+                    val oldRecipe =
+                        Recipe(
+                            id = theRecipe.id,
+                            title = title,
+                            authorId = AppActivity.userId.toLong(),
+                            author = AppActivity.userName,
+                            image = reference,
+                            category = Category.valueOf(categoryString),
+                            content = content,
+                            steps = allSteps,
+                        )
+                    viewModel.updateRecipe(oldRecipe)
+
+                    context?.let { it1 ->
+                        MaterialAlertDialogBuilder(it1)
+                            .setTitle(resources.getString(R.string.createReciprDialogSuccess))
+                            .setMessage(R.string.SuccessMessageUpdate)
+                            .setPositiveButton(resources.getString(R.string.undestood)) { dialog, which ->
+                                // Respond to positive button press
+                            }
+                            .show()
+                        findNavController().navigateUp()
+                    }
+                } else {
+                    val newRecipe = category?.let { it1 ->
+                        Recipe(
+                            title = title,
+                            authorId = AppActivity.userId.toLong(),
+                            author = AppActivity.userName,
+                            image = reference,
+                            category = it1,
+                            content = content,
+                            steps = allSteps,
+                        )
+                    }
+                    if (newRecipe != null) {
+                        viewModel.createRecipe(newRecipe)
+                        context?.let { it1 ->
+                            MaterialAlertDialogBuilder(it1)
+                                .setTitle(resources.getString(R.string.createReciprDialogSuccess))
+                                .setMessage(R.string.SuccessMessage)
+                                .setPositiveButton(resources.getString(R.string.undestood)) { dialog, which ->
+                                    // Respond to positive button press
+                                }
+                                .show()
+                            view?.hideKeyboard()
+                            findNavController().navigateUp()
+                        }
+                    }
                 }
             }
 
         }
-//        //запихиваем
-//        if (theRecipe != null) {
-//            title.setText(theRecipe.title)
-//            content.setText(theRecipe.content)
-//            for (button in radioList) {
-//                if (button.text.contains(theRecipe.category.name)) {
-//                    button.isChecked
-//                }
-//                break
-//            }
-
-//            reference.setText(theRecipe.image)
-
-//                if(theRecipe.step1 != "") step1.setText(theRecipe.step1
-//                step2.setText(theRecipe.step2)
-//                step3.setText(theRecipe.title)
-//                step4.setText(theRecipe.title)
-//                step5.setText(theRecipe.title)
-//                step6.setText(theRecipe.title)
-//                step7.setText(theRecipe.title)
-//                step8.setText(theRecipe.title)
-//                step9.setText(theRecipe.title)
-//                step10.setText(theRecipe.title)
         return binding.root
     }
 
-
     companion object {
-        var Bundle.recipeId: String? by StringArg
+        var Bundle.recipeId1: String? by StringArg
+        //var Bundle.recipeIdfromSearch: String? by StringArg
     }
 }
+

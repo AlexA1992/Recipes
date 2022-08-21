@@ -29,7 +29,7 @@ internal fun RecipeEntity.toModel() = Recipe(
 //    isFavorite = isFavorite,
 //    isLikedByMe = isLikedByMe,
 //    isDislikedByMe = isDislikedByMe,
-    isMine = isMine,
+//    isMine = isMine,
     countFavorites = countFavorites,
     countLikes = countLikes,
     countDislikes = countDislikes,
@@ -49,7 +49,7 @@ internal fun Recipe.toEntity() = RecipeEntity(
 //    isFavorite = isFavorite,
 //    isLikedByMe = isLikedByMe,
 //    isDislikedByMe = isDislikedByMe,
-    isMine = isMine,
+//    isMine = isMine,
     countFavorites = countFavorites,
     countLikes = countLikes,
     countDislikes = countDislikes,
@@ -105,6 +105,12 @@ internal fun DislikeEntity.toModel() = Dislike(
 )
 
 internal fun Dislike.toEntity() = DislikeEntity(
+    id = id,
+    userId = userId,
+    recipeId = recipeId,
+)
+
+internal fun Share.toEntity() = ShareEntity(
     id = id,
     userId = userId,
     recipeId = recipeId,

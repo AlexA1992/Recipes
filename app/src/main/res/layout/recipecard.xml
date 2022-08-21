@@ -5,19 +5,21 @@
     android:id="@+id/card"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginStart="15dp"
-    android:layout_marginEnd="15dp">
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint"
+        android:background="@color/bottommenubar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="@string/title"
+            android:layout_marginTop="15dp"
+            tools:text="soup"
             android:textAppearance="?attr/textAppearanceHeadline6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -28,13 +30,27 @@
             style="@style/Widget.AppTheme.isMineCheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:textSize="20sp"
+            android:layout_marginTop="5dp"
             android:contentDescription="@string/isMine"
+            android:textSize="20sp"
+            android:enabled="false"
             android:visibility="gone"
-            app:icon="@drawable/ic_baseline_handshake_24"
+            app:icon="@drawable/ic_baseline_business_center_24"
             app:layout_constraintStart_toEndOf="@id/title"
             app:layout_constraintTop_toTopOf="parent" />
+
+
+        <!-- Date -->
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="15dp"
+            android:textColor="?android:attr/textColorSecondary"
+            app:layout_constraintStart_toEndOf="@id/mine"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="some date" />
 
         <!-- Menu -->
         <com.google.android.material.button.MaterialButton
@@ -42,10 +58,10 @@
             style="@style/Widget.AppTheme.OptionsButton"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:layout_marginTop="5dp"
             app:icon="@drawable/ic_baseline_more_vert_24"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <!-- Image -->
         <ImageView
@@ -54,214 +70,195 @@
             android:layout_height="200dp"
             android:contentDescription="@string/content_description_media"
             android:scaleType="fitXY"
-            app:layout_constraintTop_toBottomOf="@id/menuButton"
             app:layout_constraintStart_toStartOf="parent"
-            />
+            app:layout_constraintTop_toBottomOf="@id/menuButton" />
 
-            <!-- Author -->
-            <TextView
-                android:id="@+id/authorSign"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/authorSign"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:textAppearance="?attr/textAppearanceBody2"
-                android:textColor="?android:attr/textColorSecondary"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/image" />
-            <TextView
-                android:id="@+id/author"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                tools:text="author"
-                android:textAppearance="?attr/textAppearanceBody2"
-                android:textColor="?android:attr/textColorSecondary"
-                app:layout_constraintStart_toEndOf="@id/authorSign"
-                app:layout_constraintTop_toBottomOf="@id/image" />
+        <!-- Author -->
+        <TextView
+            android:id="@+id/authorSign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/authorSign"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="?android:attr/textColorSecondary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image" />
 
-            <!-- Category -->
-            <TextView
-                android:id="@+id/categorySign"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:text="@string/categorySign"
-                android:textAppearance="?attr/textAppearanceBody2"
-                android:textColor="?android:attr/textColorSecondary"
-                app:layout_constraintStart_toEndOf="@id/author"
-                app:layout_constraintTop_toBottomOf="@id/image" />
-            <TextView
-                android:id="@+id/category"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                tools:text="category"
-                android:textAppearance="?attr/textAppearanceBody2"
-                android:textColor="?android:attr/textColorSecondary"
-                app:layout_constraintStart_toEndOf="@id/categorySign"
-                app:layout_constraintTop_toBottomOf="@id/image"
-                />
+        <TextView
+            android:id="@+id/author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="20dp"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="?android:attr/textColorSecondary"
+            app:layout_constraintStart_toEndOf="@id/authorSign"
+            app:layout_constraintTop_toBottomOf="@id/image"
+            tools:text="author" />
 
-            <!-- Date -->
-            <TextView
-                android:id="@+id/date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                tools:text="some date"
-                android:layout_marginBottom="20dp"
-                android:textColor="?android:attr/textColorSecondary"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/image" />
+        <!-- Category -->
+        <TextView
+            android:id="@+id/categorySign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/categorySign"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="?android:attr/textColorSecondary"
+            app:layout_constraintEnd_toStartOf="@id/category"
+            app:layout_constraintTop_toBottomOf="@id/image" />
 
-            <!-- Barrier3 -->
-            <androidx.constraintlayout.widget.Barrier
-                android:id="@+id/barrier3"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:barrierDirection="bottom"
-                app:constraint_referenced_ids="author, authorSign, category, categorySign, date"
-                />
-
-            <!--            действия-->
-            <!--в Избранное-->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/favorites"
-                style="@style/Widget.AppTheme.favoritesCheckBox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:checkable="true"
-                android:contentDescription="@string/favorites"
-                android:textColor="@color/darkgrey"
-                android:textSize="20sp"
-                app:icon="@drawable/ic_baseline_star_outline_24"
-                app:layout_constraintEnd_toStartOf="@id/likes"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/barrier3"
-/>
-
-            <!--лайк-->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/likes"
-                style="@style/Widget.AppTheme.likeCheckBox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:checkable="true"
-                android:contentDescription="@string/likes"
-                android:textColor="@color/darkgrey"
-                android:textSize="20sp"
-                app:icon="@drawable/ic_baseline_favorite_border_24"
-                app:layout_constraintEnd_toStartOf="@id/dislikes"
-                app:layout_constraintStart_toEndOf="@id/favorites"
-                app:layout_constraintTop_toBottomOf="@id/barrier3"
->
-
-            </com.google.android.material.button.MaterialButton>
-
-            <!--дизлайк-->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/dislikes"
-                style="@style/Widget.AppTheme.likeCheckBox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:checkable="true"
-                android:contentDescription="@string/likes"
-                android:textColor="@color/darkgrey"
-                android:textSize="20sp"
-                app:icon="@drawable/ic_baseline_heart_broken_24"
-                app:layout_constraintStart_toEndOf="@id/likes"
-                app:layout_constraintTop_toBottomOf="@id/barrier3"
->
-
-            </com.google.android.material.button.MaterialButton>
-
-            <!--sharing-->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/shares"
-                style="@style/Widget.AppTheme.shareCheckBox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:checkable="true"
-                android:contentDescription="@string/shares"
-                android:textColor="@color/darkgrey"
-                android:textSize="20sp"
-                app:icon="@drawable/ic_baseline_share_24"
-                app:layout_constraintStart_toEndOf="@id/dislikes"
-                app:layout_constraintTop_toBottomOf="@id/barrier3"
-/>
-           <androidx.constraintlayout.widget.Barrier
-                android:id="@+id/barrier1"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginBottom="10dp"
-                app:barrierDirection="bottom"
-                app:constraint_referenced_ids="likes, dislikes, shares" />
+        <TextView
+            android:id="@+id/category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="20dp"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="?android:attr/textColorSecondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image"
+            tools:text="category" />
 
 
-            <!-- Buttons -->
-            <!-- learn more -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/learnmore"
-                style="?attr/materialButtonOutlinedStyle"
-                app:strokeColor="@color/lightgrey"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="5dp"
-                android:text="@string/action_1"
-                app:layout_constraintEnd_toStartOf="@id/outlets"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/barrier1" />
+        <!-- Barrier3 -->
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="author, authorSign, category, categorySign, date" />
 
-            <!-- Map -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/outlets"
-                style="?attr/materialButtonOutlinedStyle"
-                app:strokeColor="@color/lightgrey"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="@string/action_2"
-                app:layout_constraintEnd_toStartOf="@id/order"
-                app:layout_constraintStart_toEndOf="@id/learnmore"
-                app:layout_constraintTop_toBottomOf="@id/barrier1" />
+        <!--            действия-->
+        <!--в Избранное-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/favorites"
+            style="@style/Widget.AppTheme.favoritesCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:checkable="true"
+            android:contentDescription="@string/favorites"
+            android:enabled="false"
+            app:icon="@drawable/thefavorites"
+            app:layout_constraintEnd_toStartOf="@id/likes"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/barrier3" />
 
-            <!-- Order -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/order"
-                style="?attr/materialButtonOutlinedStyle"
-                app:strokeColor="@color/lightgrey"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginStart="5dp"
-                android:text="@string/action_3"
-                app:layout_constraintStart_toEndOf="@id/outlets"
-                app:layout_constraintTop_toBottomOf="@id/barrier1"
-                />
+        <!--лайк-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/likes"
+            style="@style/Widget.AppTheme.likeCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:checkable="true"
+            android:contentDescription="@string/likes"
+            android:enabled="false"
+            app:icon="@drawable/thelikes"
+            app:layout_constraintEnd_toStartOf="@id/dislikes"
+            app:layout_constraintStart_toEndOf="@id/favorites"
+            app:layout_constraintTop_toBottomOf="@id/barrier3">
 
-                        <!-- Divider -->
-            <com.google.android.material.divider.MaterialDivider
-                android:id="@+id/divider"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_marginTop="5dp"
-                android:foregroundTint="@color/lightgrey"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+        </com.google.android.material.button.MaterialButton>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--дизлайк-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/dislikes"
+            style="@style/Widget.AppTheme.dislikeCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:checkable="true"
+            android:contentDescription="@string/dislikes"
+            android:enabled="false"
+            app:icon="@drawable/thedislikes"
+            app:layout_constraintStart_toEndOf="@id/likes"
+            app:layout_constraintTop_toBottomOf="@id/barrier3">
+
+        </com.google.android.material.button.MaterialButton>
+
+        <!--sharing-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/shares"
+            style="@style/Widget.AppTheme.shareCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:checkable="true"
+            android:contentDescription="@string/shares"
+            android:enabled="false"
+            app:icon="@drawable/theshares"
+            app:layout_constraintStart_toEndOf="@id/dislikes"
+            app:layout_constraintTop_toBottomOf="@id/barrier3" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="10dp"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="likes, dislikes, shares" />
+
+
+        <!-- Buttons -->
+        <!-- learn more -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/learnmore"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:text="@string/action_1"
+            app:layout_constraintEnd_toStartOf="@id/outlets"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/barrier1"
+            app:strokeColor="@color/lightgrey" />
+
+        <!-- Map -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/outlets"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/action_2"
+            app:layout_constraintEnd_toStartOf="@id/order"
+            app:layout_constraintStart_toEndOf="@id/learnmore"
+            app:layout_constraintTop_toBottomOf="@id/barrier1"
+            app:strokeColor="@color/lightgrey" />
+
+        <!-- Order -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/order"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/action_3"
+            app:layout_constraintStart_toEndOf="@id/outlets"
+            app:layout_constraintTop_toBottomOf="@id/barrier1"
+            app:strokeColor="@color/lightgrey" />
+
+        <!-- Divider -->
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginTop="15dp"
+            android:foregroundTint="@color/lightgrey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/order"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </com.google.android.material.card.MaterialCardView>

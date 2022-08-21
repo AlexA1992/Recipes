@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="0"
+        android:layout_column="0"
+        android:padding="10dp"
+        android:layout_gravity="bottom"
+        app:chipSpacingHorizontal="5dp"
+        app:chipSpacingVertical="5dp"
+        >
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/asianChip"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:chipBackgroundColor="@color/lightgrey"
+            app:rippleColor="@color/white"
+            android:checked="true"
+            android:textColor="@color/bottommenubar"
+            app:chipStartPadding="4dp"
+            app:chipEndPadding="6dp"
+            android:text="@string/asianChip"
+            />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/americanChip"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:chipBackgroundColor="@color/lightgrey"
+            app:rippleColor="@color/white"
+            android:checked="true"
+            android:textColor="@color/bottommenubar"
+            app:chipStartPadding="4dp"
+            app:chipEndPadding="6dp"
+            android:text="@string/americanChip" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/easternChip"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:chipBackgroundColor="@color/lightgrey"
+            app:rippleColor="@color/white"
+            android:checked="true"
+            android:textColor="@color/bottommenubar"
+            app:chipStartPadding="4dp"
+            app:chipEndPadding="6dp"
+            android:text="@string/easternChip" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/panasianChip"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:chipBackgroundColor="@color/lightgrey"
+            app:rippleColor="@color/white"
+            android:checked="true"
+            android:textColor="@color/bottommenubar"
+            app:chipStartPadding="4dp"
+            app:chipEndPadding="6dp"
+            android:text="@string/panasianChip" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/mediterraneanChip"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:chipBackgroundColor="@color/lightgrey"
+            app:rippleColor="@color/white"
+            android:checked="true"
+            android:textColor="@color/bottommenubar"
+            app:chipStartPadding="4dp"
+            app:chipEndPadding="6dp"
+            android:text="@string/mediterraneanChip" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/russianChip"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:chipBackgroundColor="@color/lightgrey"
+            app:rippleColor="@color/white"
+            android:checked="true"
+            android:textColor="@color/bottommenubar"
+            app:chipStartPadding="4dp"
+            app:chipEndPadding="6dp"
+            android:text="@string/russianChip" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/europeanChip"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:chipBackgroundColor="@color/lightgrey"
+            app:rippleColor="@color/white"
+            android:checked="true"
+            android:textColor="@color/bottommenubar"
+            app:chipStartPadding="4dp"
+            app:chipEndPadding="6dp"
+            android:text="@string/europeanChip" />
+    </com.google.android.material.chip.ChipGroup>
+</androidx.appcompat.widget.LinearLayoutCompat>
+

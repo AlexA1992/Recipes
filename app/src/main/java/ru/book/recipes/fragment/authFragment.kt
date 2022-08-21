@@ -1,6 +1,5 @@
 package ru.book.recipes.fragment
 
-import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MenuItem
@@ -14,12 +13,11 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.navigation.NavigationView
-import com.google.android.material.snackbar.Snackbar
 import ru.book.recipes.R
 import ru.book.recipes.activity.AppActivity
 import ru.book.recipes.data.User
 import ru.book.recipes.databinding.FragmentAuthBinding
-import ru.book.recipes.databinding.FragmentStartBinding
+import ru.book.recipes.utils.hideKeyboard
 import ru.book.recipes.viewModel.RecipeViewModel
 
 class authFragment : Fragment() {
@@ -77,12 +75,12 @@ class authFragment : Fragment() {
             if (!userNameText.isEmpty() && !userPasswordText.isEmpty()) {
                 val userToAuth = User(0, userNameText.toString(), userPasswordText.toString(), "")
 
-                var theUser: User? = null
+//                var theUser: User? = null
                 viewModel.findUser(userToAuth)
 
                 viewModel.foundedUser.observe(viewLifecycleOwner) { foundedUser ->
-                    println(foundedUser)
-                    theUser = foundedUser
+//                    println(foundedUser)
+//                    theUser = foundedUser
                     if (foundedUser != null) {
                         locked.visibility = android.view.View.GONE
                         unLcked.visibility = android.view.View.VISIBLE
@@ -99,9 +97,10 @@ class authFragment : Fragment() {
                         theauthInView.setVisible(false)
                         Toast.makeText(context, "Yes, you are", Toast.LENGTH_SHORT)
                             .show()
+                        view?.hideKeyboard()
                         findNavController().navigateUp()
                     }
-                    if (theUser == null) {
+                    if (foundedUser == null) {
                         context?.let { it1 ->
                             MaterialAlertDialogBuilder(context!!)
                                 .setTitle(resources.getString(R.string.dialogtitle))

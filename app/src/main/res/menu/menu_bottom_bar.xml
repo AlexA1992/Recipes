@@ -12,14 +12,14 @@
     <item android:title="@string/favorites"
         android:id="@+id/favoritesFragment"
         android:icon="@drawable/ic_baseline_star_24"
+        android:tint="@color/lightgrey"
         android:enabled="true"
         />
 
     <item android:title="@string/contest"
         android:id="@+id/contestFragment"
-        android:icon="@drawable/ic_baseline_tour_24"
+        android:icon="@drawable/ic_baseline_emoji_events_24"
+        android:tint="@color/lightgrey"
         android:enabled="true"
         />
-
-
 </menu>

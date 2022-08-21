@@ -11,37 +11,159 @@
         android:label="Главная">
         <action
             android:id="@+id/action_startFragment_to_newRecipeFragment"
-            app:destination="@id/newRecipeFragment" />
+            app:destination="@id/newRecipeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/action_startFragment_to_singleRecipeFragment"
-            app:destination="@id/singleRecipeFragment" />
+            app:destination="@id/singleRecipeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_startFragment_to_searchFragment3"
+            app:destination="@id/searchFragment3"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_startFragment_to_filterFragment2"
+            app:destination="@id/filterFragment2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/newRecipeFragment"
         android:name="ru.book.recipes.fragment.newRecipeFragment"
-        android:label="newRecipeFragment" />
+        android:label="Новый рецепт"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_right"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right"/>
     <fragment
         android:id="@+id/singleRecipeFragment"
         android:name="ru.book.recipes.fragment.singleRecipeFragment"
-        android:label="singleRecipeFragment" >
+        android:label="Рецепт в деталях" >
         <action
             android:id="@+id/action_singleRecipeFragment_to_newRecipeFragment"
-            app:destination="@id/newRecipeFragment" />
+            app:destination="@id/newRecipeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_singleRecipeFragment_to_searchFragment3"
+            app:destination="@id/searchFragment3"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_singleRecipeFragment_to_filterFragment2"
+            app:destination="@id/filterFragment2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/authFragment"
         android:name="ru.book.recipes.fragment.authFragment"
-        android:label="authFragment" />
+        android:label="Вход" />
     <fragment
         android:id="@+id/contestFragment"
         android:name="ru.book.recipes.fragment.contestFragment"
-        android:label="contestFragment" />
+        android:label="Конкурс"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_right"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right"/>
     <fragment
         android:id="@+id/favoritesFragment"
         android:name="ru.book.recipes.fragment.favoritesFragment"
-        android:label="favoritesFragment" />
+        android:label="Избранное" >
+        <action
+            android:id="@+id/action_favoritesFragment_to_singleRecipeFragment"
+            app:destination="@id/singleRecipeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_favoritesFragment_to_newRecipeFragment"
+            app:destination="@id/newRecipeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_favoritesFragment_to_searchFragment3"
+            app:destination="@id/searchFragment3"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_favoritesFragment_to_filterFragment2"
+            app:destination="@id/filterFragment2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
     <fragment
         android:id="@+id/signinFragment"
         android:name="ru.book.recipes.fragment.signInFragment"
-        android:label="signInFragment" />
+        android:label="Регистрация" />
+    <fragment
+        android:id="@+id/searchFragment3"
+        android:name="ru.book.recipes.fragment.searchFragment"
+        android:label="Результаты поиска" >
+        <action
+            android:id="@+id/action_searchFragment3_to_newRecipeFragment"
+            app:destination="@id/newRecipeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_searchFragment3_to_singleRecipeFragment"
+            app:destination="@id/singleRecipeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/filterFragment2"
+        android:name="ru.book.recipes.fragment.filterFragment"
+        android:label="Результаты фильтра" >
+        <action
+            android:id="@+id/action_filterFragment2_to_singleRecipeFragment"
+            app:destination="@id/singleRecipeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_filterFragment2_to_newRecipeFragment"
+            app:destination="@id/newRecipeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_filterFragment2_to_singleRecipeFragment2"
+            app:destination="@id/singleRecipeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
 </navigation>

@@ -3,33 +3,56 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/drawable/ic_baseline_business_center_24.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/drawable/ic_baseline_clean_hands_24.xml" value="0.1135" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/drawable/ic_baseline_density_small_24.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/drawable/ic_baseline_eco_24.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/drawable/ic_baseline_favorite_24_magenta.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/drawable/ic_baseline_favorite_24_white.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/drawable/ic_baseline_filter_alt_24.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/drawable/ic_baseline_heart_broken_24.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/drawable/ic_baseline_heart_broken_24_rose.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/drawable/ic_baseline_location_on_24.xml" value="0.153" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/drawable/ic_baseline_lock_open_24.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/drawable/ic_baseline_more_vert_24.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/drawable/ic_baseline_share_24_yellow.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/drawable/ic_baseline_star_24.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/drawable/ic_baseline_star_24_white.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/drawable/ic_baseline_star_border_24.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/drawable/ic_baseline_star_outline_24.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/drawable/ic_baseline_tour_24.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/drawable/ic_outline_star_border_24.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/drawable/ic_round_add_24.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/drawable/ic_startpicture.xml" value="0.1" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/layout/activity_app.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/drawable/theFavorites.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/drawable/thedislikes.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/drawable/thefavorites.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/drawable/thelikes.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/drawable/theshares.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/layout/activity_app.xml" value="0.16" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/layout/activity_main.xml" value="0.16" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/layout/filter_layout.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/layout/fragment_auth.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/layout/fragment_contest.xml" value="0.18333333333333332" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/layout/fragment_favorites.xml" value="0.18333333333333332" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/layout/fragment_favorites.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/layout/fragment_filter.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/layout/fragment_layout.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/layout/fragment_new_recipe.xml" value="0.11940298507462686" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/layout/fragment_search.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/layout/fragment_search.xml" value="0.152" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/layout/fragment_signin.xml" value="0.1" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/layout/fragment_single_recipe.xml" value="0.264" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/layout/fragment_start.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/layout/fragment_single_recipe.xml" value="0.176" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/layout/fragment_start.xml" value="0.176" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/layout/header_navigation_drawer.xml" value="0.176" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/layout/recipe_card.xml" value="0.176" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/layout/recipecard.xml" value="0.2" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/layout/searching_layout.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/layout/start_activity.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/menu/icons.xml" value="0.184375" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/menu/menu_bottom_bar.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/menu/menu_bottom_bar.xml" value="0.16" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/menu/navigation_drawer.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/menu/options_recipe.xml" value="0.18153846153846154" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Recipes/app/src/main/res/menu/top_app_bar.xml" value="0.1" />

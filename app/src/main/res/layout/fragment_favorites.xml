@@ -9,21 +9,22 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recipesRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/recipecard">
     </androidx.recyclerview.widget.RecyclerView>
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/cooking"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:contentDescription="@string/cooking"
-        android:src="@drawable/cook"
-        android:visibility="gone"
-        android:scaleType="fitXY"
+        android:text="@string/noFavors"
+        android:textSize="20sp"
+        android:textColor="@color/lightgrey"
+        android:layout_margin="30dp"
+        android:gravity="center"
+        android:visibility="visible"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp" />
 

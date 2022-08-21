@@ -31,19 +31,19 @@
     <string name="shares">shares</string>
     <string name="remove_this">Remove this</string>
     <string name="edit">Edit this</string>
-    <string name="design_your_password">Design your password</string>
+    <string name="design_your_password">Enter your password</string>
     <string name="signingin">Sign in</string>
     <string name="isMine">Shown if it is mine</string>
-    <string name="content">some content/n/bdfgsdfgsdf/n/bsdfgsdfg/n/b</string>
+    <string name="content">some content</string>
     <string name="contentlable">Рецепт блюда</string>
     <string name="actions">Действия</string>
-    <string name="infotitle">Общая инфа</string>
+    <string name="infotitle">Общая информация о популярности рецепта</string>
     <string name="likesinfo">Quantity of Likes</string>
     <string name="favoritesinfo">In favorites</string>
     <string name="dislikes">Dislike this</string>
     <string name="sharesinfo">Quantity of Shares</string>
     <string name="dislikesinfo">Quantity of Dislikes</string>
-    <string name="stepsTitle">Cooking Roadmap</string>
+    <string name="stepsTitle">Шаги приготовления</string>
     <string name="stepsContent1">Шаг 1:</string>
     <string name="stepsContent10">Шаг 10</string>
     <string name="stepsContent9">Шаг 9</string>
@@ -100,10 +100,26 @@
     <string name="dialogtitle">Bad news</string>
     <string name="firstDialogTitle">Как с этим работать</string>
     <string name="firstDialogDismiss">Понятно</string>
-    <string name="wholeText">Приветствуем Вас!\n\nВы попали в книгу рецептов.\n\nВ данный момент Вы не идентифицированы.\n\nЧтобы пользоваться всеми фичвми сервиса (отправлять рецепты в Избранное, лайкать, дизлайкать или делиться чужими рецептами, а также добавлять свои), сделайте левый свайи и либо зарегистрируйтесь, либо пройдите аутентификацию.\n\nНо, если Вы хотите просто посмотреть, то проходить аутентификацию или регистрироваться не обязательно.\n\nУспехов!</string>
-    <string name="createReciprDialog">Ошибка! рецепт не сохранен</string>
+    <string name="wholeText">Приветствуем Вас!\n\nВы попали в книгу рецептов.\n\nВ данный момент Вы не идентифицированы.\n\nЧтобы пользоваться всеми фичвми сервиса (отправлять рецепты в Избранное, лайкать, дизлайкать или делиться чужими рецептами, а также добавлять свои), сделайте левый свайп и либо зарегистрируйтесь, либо пройдите аутентификацию.\n\nНо, если Вы хотите просто посмотреть, то проходить аутентификацию или регистрироваться не обязательно.\n\nУспехов!</string>
+    <string name="createReciprDialogError">Ошибка! рецепт не сохранен</string>
+    <string name="createReciprDialogSuccess">Good job!</string>
+    <string name="SuccessMessage">Рецепт добавлен.</string>
     <string name="noCategoryAdded">Вы забыли выбрать категорию</string>
     <string name="undestood">Понятно</string>
+    <string name="SuccessMessageUpdate">Рецепт изменен!</string>
+    <string name="buttonSearch">Search</string>
+    <string name="searchWhat">Type what you are looking for</string>
+    <string name="noSearch">404 \nрецептов с такими параментрами\n не найдено</string>
+    <string name="asianChip">ASIAN</string>
+    <string name="americanChip">AMERICAN</string>
+    <string name="easternChip">EASTERN</string>
+    <string name="panasianChip">PANASIAN</string>
+    <string name="mediterraneanChip">MEDITERRANEAN</string>
+    <string name="russianChip">RUSSIAN</string>
+    <string name="europeanChip">EUROPEAN</string>
+    <string name="chooseChips">Choose categories</string>
+    <string name="noFilter">404 \nрецептов таких категорий\n не найдено</string>
+    <string name="noFavors">404 \nУ Вас пока нет Избранных рецептов.\nТапните по звездочке соответствующего рецепта, чтобы добавить его в Избранное</string>
 
 
 </resources>

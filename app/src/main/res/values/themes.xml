@@ -2,21 +2,16 @@
     <!-- Base application theme. -->
     <style name="Theme.Recipes" parent="Theme.MaterialComponents.NoActionBar.Bridge">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/white</item>
-        <item name="colorPrimaryVariant">@color/white</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimary">@color/lightgrey</item>
+        <item name="colorPrimaryVariant">@color/lightgrey</item>
+        <item name="colorOnPrimary">@color/lightgrey</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/lightgrey</item>
         <item name="colorSecondaryVariant">@color/lightgrey</item>
         <item name="colorOnSecondary">@color/lightgrey</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">@color/bottommenubar</item>
-        <item name="android:background">@color/bottommenubar</item>
+        <item name="android:statusBarColor" >@color/bottommenubar</item>
         <!-- Customize your theme here. -->
-        <item name="android:textColor">@color/white</item>
-        <item name="iconTint">@color/lightgrey</item>
-        <item name="icon">@color/lightgrey</item>
-        <item name="android:windowTranslucentStatus">true</item>
     </style>
     <style name="Widget.AppTheme.isMineCheckBox" parent="Widget.MaterialComponents.Button.TextButton.Icon">
         <item name="iconTint">@color/colorAccent</item>
@@ -24,27 +19,28 @@
         <item name="android:minHeight">@dimen/icon_button_min_size</item>
     </style>
     <style name="Widget.AppTheme.favoritesCheckBox" parent="Widget.MaterialComponents.Button.TextButton.Icon">
-        <item name="iconTint">@color/darkgrey</item>
+        <item name="iconTint">@color/favorite_tint</item>
         <item name="android:minWidth">@dimen/icon_button_min_size</item>
         <item name="android:minHeight">@dimen/icon_button_min_size</item>
     </style>
     <style name="Widget.AppTheme.likeCheckBox" parent="Widget.MaterialComponents.Button.TextButton.Icon">
-        <item name="iconTint">@color/darkgrey</item>
-        <item name="android:minWidth">@dimen/icon_button_min_size</item>
-        <item name="android:minHeight">@dimen/icon_button_min_size</item>
-    </style>
-    <style name="Widget.AppTheme.shareCheckBox" parent="Widget.MaterialComponents.Button.TextButton.Icon">
-        <item name="iconTint">@color/darkgrey</item>
+        <item name="iconTint">@color/like_tint</item>
         <item name="android:minWidth">@dimen/icon_button_min_size</item>
         <item name="android:minHeight">@dimen/icon_button_min_size</item>
     </style>
     <style name="Widget.AppTheme.dislikeCheckBox" parent="Widget.MaterialComponents.Button.TextButton.Icon">
-        <item name="iconTint">@color/darkgrey</item>
+        <item name="iconTint">@color/share_tint</item>
         <item name="android:minWidth">@dimen/icon_button_min_size</item>
         <item name="android:minHeight">@dimen/icon_button_min_size</item>
     </style>
+    <style name="Widget.AppTheme.shareCheckBox" parent="Widget.MaterialComponents.Button.TextButton.Icon">
+        <item name="iconTint">@color/dislike_tint</item>
+        <item name="android:minWidth">@dimen/icon_button_min_size</item>
+        <item name="android:minHeight">@dimen/icon_button_min_size</item>
+    </style>
+
     <style name="Widget.AppTheme.OptionsButton" parent="Widget.MaterialComponents.Button.TextButton.Icon">
-        <item name="iconTint">@color/white</item>
+        <item name="iconTint">@color/optionsbut</item>
         <item name="android:minWidth">@dimen/icon_button_min_size</item>
         <item name="android:minHeight">@dimen/icon_button_min_size</item>
     </style>

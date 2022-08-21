@@ -18,13 +18,9 @@ data class Recipe(
     val title: String,
     val authorId: Long,
     val author: String,
-    val image: String = "R.drawable.peasoup",
+    val image: String = "",
     var category: Category,
     var date: String = getCurrentDateTime(),
-//    var isFavorite: Boolean = false,
-//    var isLikedByMe: Boolean = false,
-//    var isDislikedByMe: Boolean = false,
-    var isMine: Boolean = false,
     var countFavorites: Long = 0,
     var countLikes: Long = 0,
     var countDislikes: Long = 0,
@@ -66,6 +62,13 @@ data class Like(
 
 @Serializable
 data class Dislike(
+    val id: Long = 0,
+    var userId: Long,
+    var recipeId: Long,
+)
+
+@Serializable
+data class Share(
     val id: Long = 0,
     var userId: Long,
     var recipeId: Long,
