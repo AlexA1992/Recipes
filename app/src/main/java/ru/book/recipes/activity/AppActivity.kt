@@ -23,7 +23,7 @@ import ru.book.recipes.fragment.SearchDialog
 
 
 class AppActivity : AppCompatActivity() {
-//    private val viewModel: RecipeViewModel by viewModels()
+    //    private val viewModel: RecipeViewModel by viewModels()
 //    private lateinit var favorites: MaterialButton
 //    private lateinit var likes: MaterialButton
 //    private lateinit var dislikes: MaterialButton
@@ -85,8 +85,12 @@ class AppActivity : AppCompatActivity() {
             println("null")
         }
 
-        if(thesignInView.isChecked) { theDrawerLayout.close()}
-        if(theauthInView.isChecked) { theDrawerLayout.close()}
+        if (thesignInView.isChecked) {
+            theDrawerLayout.close()
+        }
+        if (theauthInView.isChecked) {
+            theDrawerLayout.close()
+        }
 
         //Приветствие
         MaterialAlertDialogBuilder(this)
@@ -97,19 +101,35 @@ class AppActivity : AppCompatActivity() {
             }
             .show()
 
-        //вызываем Search
-        binding.topAppBar.findViewById<View>(R.id.searchFragment).setOnClickListener {
-            SearchDialog().show(supportFragmentManager, SearchDialog.TAG)
-            println("pressed search")
-        }
+//        //вызываем Search
+//        binding.topAppBar.findViewById<View>(R.id.searchFragment).setOnClickListener {
+//            SearchDialog().show(supportFragmentManager, SearchDialog.TAG)
+//            println("pressed search")
+//        }
+//
+//        //вызываем Filter
+//        binding.topAppBar.findViewById<View>(R.id.filterFragment).setOnClickListener {
+//            FilterDialog().show(supportFragmentManager, FilterDialog.TAG)
+//            println("pressed filter")
+//        }
+//    }
 
-        //вызываем Filter
-        binding.topAppBar.findViewById<View>(R.id.filterFragment).setOnClickListener {
-            FilterDialog().show(supportFragmentManager, FilterDialog.TAG)
-            println("pressed filter")
-        }
     }
 
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.searchFragment -> {
+                SearchDialog().show(supportFragmentManager, SearchDialog.TAG)
+                true
+            }
+            R.id.filterFragment -> {
+                FilterDialog().show(supportFragmentManager, FilterDialog.TAG)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
 
     //Bottom Navigation
     fun bottomNavigation() {
@@ -141,4 +161,5 @@ class AppActivity : AppCompatActivity() {
         var fragStack: List<String> = listOf()
     }
 }
+
 
